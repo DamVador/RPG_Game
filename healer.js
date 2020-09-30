@@ -10,7 +10,7 @@ class Monk extends Character {
 
     attack = (victim) => {
       let attack_choice = prompt("Que souhaitez vous faire ? (attaque basique : A, attaque speciale : B)", "A");
-      if (attack_choice == "A") {
+      if (attack_choice == "A" || this.mana_points < 25) {
         victim.takeDamage(this.attack_points);
       } else if (attack_choice == "B")  {
         this.heal();

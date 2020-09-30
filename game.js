@@ -36,7 +36,7 @@ class Game {
 
   is_ended = () => {
     if (players.filter(player => player.status == "playing").length == 1) {
-      winner_player = players.filter(player => player.status == "playing")[0];
+      let winner_player = players.filter(player => player.status == "playing")[0];
       console.log(`La partie est terminée. ${winner_player} a gagné`);
       winner_player.status = "winner" ;
     }
