@@ -34,6 +34,13 @@ class Game {
     Game.new();
   }
 
+  is_ended = () => {
+    if (players.filter(player => player.status == "playing").length == 1) {
+      winner_player = players.filter(player => player.status == "playing")[0];
+      console.log(`La partie est terminée. ${winner_player} a gagné`);
+      winner_player.status = "winner" ;
+    }
+  }
 
 }
 
@@ -53,6 +60,7 @@ function shuffle (array) {
   return array;
 }
 
+prompt("Bienvenue dans le Cheap World Of Warcraft");
 
 players = [];
 let player_fighter = new Fighter;
@@ -82,76 +90,77 @@ console.log(a, b, c, d, e);
 
 while (game.turnLeft > 0) {
 
-game.startTurn();
-if (game.callPlayers(a).status == "playing") {
-game.callPlayers(a);
-let victim = prompt("Qui souhaitez vous attaquer ?")
-players.map(player => {
-  if (player.name == victim) {
-    victim = player;
-    console.log(typeof victim);
-    return victim
+  game.startTurn();
+  if (game.callPlayers(a).status == "playing") {
+    game.callPlayers(a);
+    let victim = prompt("Qui souhaitez vous attaquer ?")
+    players.map(player => {
+      if (player.name == victim) {
+        victim = player;
+        console.log(typeof victim);
+        return victim
+      }
+    });
+    game.callPlayers(a).attack(victim);
+    game.watchStats();
   }
-});
-game.callPlayers(a).attack(victim);
-game.watchStats();
-}
 
-if (game.callPlayers(b).status == "playing") {
-game.callPlayers(b);
-let victim_2 = prompt("Qui souhaitez vous attaquer ?")
-players.map(player => {
-  if (player.name == victim_2) {
-    victim_2 = player;
-    console.log(typeof victim_2);
-    return victim_2
+  if (game.callPlayers(b).status == "playing") {
+    game.callPlayers(b);
+    let victim_2 = prompt("Qui souhaitez vous attaquer ?")
+    players.map(player => {
+      if (player.name == victim_2) {
+        victim_2 = player;
+        console.log(typeof victim_2);
+        return victim_2
+      }
+    });
+    game.callPlayers(b).attack(victim_2);
+    game.watchStats();
   }
-});
-game.callPlayers(b).attack(victim_2);
-game.watchStats();
-}
 
-if (game.callPlayers(c).status == "playing") {
-game.callPlayers(c);
-let victim_3 = prompt("Qui souhaitez vous attaquer ?")
-players.map(player => {
-  if (player.name == victim_3) {
-    victim_3 = player;
-    console.log(typeof victim_3);
-    return victim_3
+  if (game.callPlayers(c).status == "playing") {
+    game.callPlayers(c);
+    let victim_3 = prompt("Qui souhaitez vous attaquer ?")
+    players.map(player => {
+      if (player.name == victim_3) {
+        victim_3 = player;
+        console.log(typeof victim_3);
+        return victim_3
+      }
+    });
+    game.callPlayers(c).attack(victim_3);
+    game.watchStats();
   }
-});
-game.callPlayers(c).attack(victim_3);
-game.watchStats();
-}
 
-if (game.callPlayers(d).status == "playing") {
-game.callPlayers(d);
-let victim_4 = prompt("Qui souhaitez vous attaquer ?")
-players.map(player => {
-  if (player.name == victim_4) {
-    victim_4 = player;
-    console.log(typeof victim_4);
-    return victim_4
+  if (game.callPlayers(d).status == "playing") {
+    game.callPlayers(d);
+    let victim_4 = prompt("Qui souhaitez vous attaquer ?")
+    players.map(player => {
+      if (player.name == victim_4) {
+        victim_4 = player;
+        console.log(typeof victim_4);
+        return victim_4
+      }
+    });
+    game.callPlayers(d).attack(victim_4);
+    game.watchStats();
   }
-});
-game.callPlayers(d).attack(victim_4);
-game.watchStats();
-}
 
-if (game.callPlayers(e).status == "playing") {
-game.callPlayers(e);
-let victim_5 = prompt("Qui souhaitez vous attaquer ?")
-players.map(player => {
-  if (player.name == victim_5) {
-    victim_5 = player;
-    console.log(typeof victim_5);
-    return victim_5
+  if (game.callPlayers(e).status == "playing") {
+    game.callPlayers(e);
+    let victim_5 = prompt("Qui souhaitez vous attaquer ?")
+    players.map(player => {
+      if (player.name == victim_5) {
+        victim_5 = player;
+        console.log(typeof victim_5);
+        return victim_5
+      }
+    });
+    game.callPlayers(e).attack(victim_5);
+    game.watchStats();
   }
-});
-game.callPlayers(e).attack(victim_5);
-game.watchStats();
-}
 
-game.skipTurn();
+  game.is_ended();
+  game.skipTurn();
 }

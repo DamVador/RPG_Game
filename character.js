@@ -10,8 +10,9 @@ class Character {
     takeDamage = (damages) => {
       this.life_points -= damages;
       if (this.life_points < 1) {
-        console.log(`${this.name} has been killed`);
+        console.log(`${this.name} est mort`);
         this.status = "loser";
+        this.life_points = 0;
       }
   }
 
