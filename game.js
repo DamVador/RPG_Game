@@ -6,11 +6,13 @@ class Game {
   }
 
   watchStats = () => {
+    console.log("----------- statut des joueurs ----------------");
     player_fighter.showState();
     player_paladin.showState();
     player_monk.showState();
     player_berzerker.showState();
     player_assassin.showState();
+    console.log("-----------------------------------------------");
   }
 
   skipTurn = () => {
@@ -22,7 +24,11 @@ class Game {
 
   startTurn = () => {
     this.current_turn += 1;
-    console.log(`On est au tour : ${this.current_turn}`);
+    console.log(`
+        --------------------
+      ||On est au tour : ${this.current_turn}||
+        --------------------
+      `);
   }
 
   callPlayers = (a) => {
@@ -31,13 +37,17 @@ class Game {
   }
 
   startGame = () => {
-    Game.new();
+    new Game;
   }
 
   is_ended = () => {
     if (players.filter(player => player.status == "playing").length == 1) {
       let winner_player = players.filter(player => player.status == "playing")[0];
-      console.log(`La partie est terminée. ${winner_player.name} a gagné`);
+      console.log(`
+        --------------------------------------------
+      ||  La partie est terminée. ${winner_player.name} a gagné ||
+        --------------------------------------------
+      `);
       winner_player.status = "winner" ;
       return true;
     }

@@ -6,10 +6,7 @@ class Berzerker extends Character {
     rage = () => {
       this.life_points -= 1;
       this.attack_points +=1;
-      if (this.life_points < 1) {
-        console.log(`${this.name} has been killed`);
-        this.status = "loser";
-      }
+      this.dealDamage(victim);
     }
 
     attack = (victim) => {

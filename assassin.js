@@ -5,11 +5,7 @@ class Assassin extends Character {
     shadowHit = (victim) => {
       this.mana_points -= 20;
       victim.life_points -= 7;
-      if(victim.life_points < 1){
-        this.mana_points += 20;
-        console.log(`${victim.name} est mort`);
-        victim.status = "looser";
-      }
+      this.dealDamage(victim);
       // coder les consequences sur le prochain tour
     }
 

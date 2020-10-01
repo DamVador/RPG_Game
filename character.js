@@ -9,16 +9,18 @@ class Character {
 
     takeDamage = (damages) => {
       this.life_points -= damages;
-      if (this.life_points < 1) {
-        console.log(`${this.name} est mort`);
-        this.status = "loser";
-        this.life_points = 0;
-      }
   }
 
     dealDamage = (victim) => {
       if(victim.life_points < 1){
         this.mana_points += 20;
+        console.log(`
+          -------------------
+        || ${victim.name} est mort ||
+          -------------------
+          `);
+        victim.status = "loser";
+        victim.life_points = 0;
       }
     }
 

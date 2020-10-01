@@ -14,22 +14,19 @@
     return array;
   }
 
-  prompt("Bienvenue dans le Cheap World Of Warcraft");
-
   players = [];
   let player_fighter = new Fighter;
   let player_paladin = new Paladin;
   let player_monk = new Monk;
   let player_berzerker = new Berzerker;
   let player_assassin = new Assassin;
+  let start = prompt("Bienvenue dans le Cheap World Of Warcraft ! ")
   let game = new Game;
-  players.push(player_fighter, player_paladin, player_monk, player_berzerker, player_assassin );
 
+  players.push(player_fighter, player_paladin, player_monk, player_berzerker, player_assassin );
   game.watchStats();
 
-  // deroulement d'un tour
-
-
+  // deroulement des tours
   while (game.turnLeft > 0) {
 
     game.startTurn();
@@ -41,7 +38,7 @@
     d = players_number[3];
     e = players_number[4];
     console.log(a, b, c, d, e);
-    
+
     if (game.callPlayers(a).status == "playing") {
       game.callPlayers(a);
       let victim = prompt("Qui souhaitez vous attaquer ?")
