@@ -32,7 +32,9 @@ class Game {
   }
 
   callPlayers = (a) => {
-    console.log(`C'est au tour de ${players[a].name} de jouer`);
+    if (players[a].status == "playing"){
+      console.log(`C'est au tour de ${players[a].name} de jouer`);
+    }
     return players[a];
   }
 

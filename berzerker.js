@@ -6,7 +6,7 @@ class Berzerker extends Character {
     rage = () => {
       this.life_points -= 1;
       this.attack_points +=1;
-      this.dealDamage(victim);
+      this.dealDamage(this);
     }
 
     attack = (victim) => {
