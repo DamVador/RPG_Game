@@ -17,7 +17,6 @@ class Character {
   }
 
     dealDamage = (victim) => {
-      victim.life_points -= this.attack_points;
       if(victim.life_points < 1){
         this.mana_points += 20;
       }

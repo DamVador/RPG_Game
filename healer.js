@@ -15,5 +15,6 @@ class Monk extends Character {
       } else if (attack_choice == "B")  {
         this.heal();
       }
+      this.dealDamage(victim);
     }
 }

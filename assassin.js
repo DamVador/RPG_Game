@@ -18,6 +18,7 @@ class Assassin extends Character {
       } else if (attack_choice == "B")  {
         this.shadowHit(victim);
       }
+      this.dealDamage(victim);
     }
 
 }

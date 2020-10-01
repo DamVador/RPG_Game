@@ -15,10 +15,11 @@ class Fighter extends Character {
     attack = (victim) => {
       let attack_choice = prompt("Que souhaitez vous faire ? (attaque basique : A, attaque speciale : B)", "A");
       if (attack_choice == "A" || this.mana_points < 20) {
-        this.dealDamage(victim);
+        victim.takeDamage(this.attack_points);
       } else if (attack_choice == "B")  {
         this.darkVision(victim);
       }
+      this.dealDamage(victim);
     }
 
 }

@@ -19,5 +19,7 @@ class Berzerker extends Character {
       } else if (attack_choice == "B")  {
         this.rage();
       }
+      this.dealDamage(victim);
     }
+
 }

@@ -19,5 +19,6 @@ class Paladin extends Character {
       } else if (attack_choice == "B" )  {
         this.healingLighting(victim);
       }
+      this.dealDamage(victim);
     }
 }
