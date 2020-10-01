@@ -39,7 +39,7 @@ class Game {
       let winner_player = players.filter(player => player.status == "playing")[0];
       console.log(`La partie est terminée. ${winner_player.name} a gagné`);
       winner_player.status = "winner" ;
-      return;
+      return true;
     }
   }
 
@@ -162,6 +162,8 @@ while (game.turnLeft > 0) {
     game.watchStats();
   }
 
-  game.is_ended();
+  if (game.is_ended()) {
+    break;
+  };
   game.skipTurn();
 }
