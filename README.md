@@ -2,7 +2,7 @@
 
 Si vous avez un probleme d'affichage au lancement, provoquez une erreur (cliquez sur "annuler" jusqu'au message d'erreur) puis actualisez la page. Cette fois-ci ca devrait mieux fonctionner
 
-Rentrez le nom des joueurs pour attaquer. Pour rappel voici les noms des joueurs et leurs caractéristiques :
+Rentrez le nom des joueurs pour attaquer (Sans faute d'orthographe :) ). Pour rappel voici les noms des joueurs et leurs caractéristiques :
 
 Fighter (Grace)
 Le Fighter commence avec 12 points de vie (hp) et 40 points de mana (mana). Il a 4 points de dégât (dmg).
