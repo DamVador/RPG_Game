@@ -12,6 +12,7 @@ class Game {
     player_monk.showState();
     player_berzerker.showState();
     player_assassin.showState();
+    player_wizard.showState();
     console.log("-----------------------------------------------");
   }
 
