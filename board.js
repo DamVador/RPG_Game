@@ -21,10 +21,11 @@
   let player_berzerker = new Berzerker;
   let player_assassin = new Assassin;
   let player_wizard = new Wizard;
+  let player_ninja = new Ninja;
   let start = prompt("Bienvenue dans le Cheap World Of Warcraft ! ")
   let game = new Game;
 
-  players.push(player_fighter, player_paladin, player_monk, player_berzerker, player_assassin, player_wizard);
+  players.push(player_fighter, player_paladin, player_monk, player_berzerker, player_assassin, player_wizard, player_ninja);
   game.watchStats();
 
   // deroulement des tours
@@ -32,14 +33,15 @@
 
     game.startTurn();
     //appel aleatoire des joueurs
-    players_number = shuffle([0,1,2,3,4,5]);
+    players_number = shuffle([0,1,2,3,4,5, 6]);
     a = players_number[0];
     b = players_number[1];
     c = players_number[2];
     d = players_number[3];
     e = players_number[4];
     f = players_number[5];
-    console.log(a, b, c, d, e, f);
+    g = players_number[6];
+    console.log(a, b, c, d, e, f, g);
 
     if (game.callPlayers(a).status == "playing") {
       let victim = prompt("Qui souhaitez vous attaquer ?")
@@ -102,14 +104,26 @@
     }
 
     if (game.callPlayers(f).status == "playing") {
-      let victim = prompt("Qui souhaitez vous attaquer ?")
+      let victim_6 = prompt("Qui souhaitez vous attaquer ?")
       players.map(player => {
-        if (player.name == victim) {
-          victim = player;
-          return victim
+        if (player.name == victim_6) {
+          victim_6 = player;
+          return victim_6
         }
       });
-      game.callPlayers(f).attack(victim);
+      game.callPlayers(f).attack(victim_6);
+      game.watchStats();
+    }
+
+    if (game.callPlayers(g).status == "playing") {
+      let victim_7 = prompt("Qui souhaitez vous attaquer ?")
+      players.map(player => {
+        if (player.name == victim_7) {
+          victim_7 = player;
+          return victim_7
+        }
+      });
+      game.callPlayers(g).attack(victim_7);
       game.watchStats();
     }
 
