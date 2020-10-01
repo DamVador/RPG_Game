@@ -2,6 +2,7 @@ class Assassin extends Character {
   constructor(name = "Carl",  life_points = 6, attack_points = 6, mana_points = 20, status = "playing") {
         super(name, life_points, attack_points, mana_points, status);
     }
+    
     shadowHit = (victim) => {
       this.mana_points -= 20;
       victim.life_points -= 7;
