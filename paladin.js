@@ -9,6 +9,8 @@ class Paladin extends Character {
       victim.life_points -= 4;
       if(victim.life_points < 1){
         this.mana_points += 20;
+        console.log(`${victim.name} est mort`);
+        victim.status = "loser";
       }
     }
 

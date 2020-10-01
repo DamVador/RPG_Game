@@ -8,6 +8,8 @@ class Fighter extends Character {
       victim.life_points -= 5;
       if(victim.life_points < 1){
         this.mana_points += 20;
+        console.log(`${victim.name} est mort`);
+        victim.status = "loser";
       }
       // coder les consequences sur le prochain tour
     }
