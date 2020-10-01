@@ -6,7 +6,10 @@ class Assassin extends Character {
       this.mana_points -= 20;
       victim.life_points -= 7;
       this.dealDamage(victim);
-      // coder les consequences sur le prochain tour
+      if (victim.life_points > 0) {
+        this.life_points -= 7;
+        this.dealDamage(this);
+      }
     }
 
     attack = (victim) => {
