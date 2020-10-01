@@ -11,8 +11,6 @@ class Wizard extends Character {
 
     attack = (victim) => {
       let attack_choice = prompt("Que souhaitez vous faire ? (attaque basique : A, attaque speciale : B)", "A");
-
-
       if (attack_choice == "B" && this.mana_points >= 25)  {
         this.fireBall(victim);
       } else if (attack_choice == "B" && this.mana_points < 25) {
