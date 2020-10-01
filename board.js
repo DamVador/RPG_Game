@@ -40,12 +40,10 @@
     console.log(a, b, c, d, e);
 
     if (game.callPlayers(a).status == "playing") {
-      game.callPlayers(a);
       let victim = prompt("Qui souhaitez vous attaquer ?")
       players.map(player => {
         if (player.name == victim) {
           victim = player;
-          console.log(typeof victim);
           return victim
         }
       });
@@ -54,12 +52,10 @@
     }
 
     if (game.callPlayers(b).status == "playing") {
-      game.callPlayers(b);
       let victim_2 = prompt("Qui souhaitez vous attaquer ?")
       players.map(player => {
         if (player.name == victim_2) {
           victim_2 = player;
-          console.log(typeof victim_2);
           return victim_2
         }
       });
@@ -68,12 +64,10 @@
     }
 
     if (game.callPlayers(c).status == "playing") {
-      game.callPlayers(c);
       let victim_3 = prompt("Qui souhaitez vous attaquer ?")
       players.map(player => {
         if (player.name == victim_3) {
           victim_3 = player;
-          console.log(typeof victim_3);
           return victim_3
         }
       });
@@ -82,12 +76,10 @@
     }
 
     if (game.callPlayers(d).status == "playing") {
-      game.callPlayers(d);
       let victim_4 = prompt("Qui souhaitez vous attaquer ?")
       players.map(player => {
         if (player.name == victim_4) {
           victim_4 = player;
-          console.log(typeof victim_4);
           return victim_4
         }
       });
@@ -96,12 +88,10 @@
     }
 
     if (game.callPlayers(e).status == "playing") {
-      game.callPlayers(e);
       let victim_5 = prompt("Qui souhaitez vous attaquer ?")
       players.map(player => {
         if (player.name == victim_5) {
           victim_5 = player;
-          console.log(typeof victim_5);
           return victim_5
         }
       });

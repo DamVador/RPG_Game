@@ -18,7 +18,10 @@ class Game {
   skipTurn = () => {
     this.turnLeft -= 1;
     if (this.turnLeft == 0) {
-      console.log("Le nombre de tour max est atteint");
+      console.log("Le nombre de tour max est atteint. Les winners sont :");
+      console.log(
+        players.filter(player => player.status == "playing").map(player => {return player.name})
+      );
     }
   }
 
